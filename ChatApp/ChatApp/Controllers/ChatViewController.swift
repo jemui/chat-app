@@ -50,6 +50,7 @@ class ChatViewController: UIViewController {
     func loadMessages() {
         
         guard let uid = checkIfUserIsAuthenticated() else { return }
+
         db.collection(Constants.fStoreCollectionName.rawValue)
 //            .whereField(Constants.fStoreSenderField.rawValue, isEqualTo: uid)
             .order(by: Constants.fStoreDateField.rawValue, descending: false)
